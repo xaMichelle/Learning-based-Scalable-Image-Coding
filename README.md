@@ -1,4 +1,4 @@
-# Learning-based-Scalable-Image-Coding
+# Learning-Based Scalable Image Compression with Latent-Feature Reuse and Prediction
 
 This repo holds the code for paper:
 
