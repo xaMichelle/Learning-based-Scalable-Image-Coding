@@ -18,14 +18,14 @@ Or Tensorflow 2.x with Tensorflowp-compression 2.x)
 ## Quality Scalable
 
 Our example has four scalable layers:
-'"python train_quality.py'"
+```python train_quality.py```
 Please specify:
-'"
+```
 --train_glob, training dataset path
 --checkpoint_dir, checkpoint output folder
-"'
+```
 You can also change the filter number and lambda of each layer:
-'"
+```
 --num_filters_B
 --num_filters_e1
 --num_filters_e2
@@ -34,11 +34,11 @@ You can also change the filter number and lambda of each layer:
 --lmbda1
 --lmbda2
 --lmbda3
-'"
+```
 
 ## Spatial Scalable
 
-'<python train_spaital.py>'
+`<python train_spaital.py>`
 
 For spatial scalable training, please preparing training dataset first. Our example (train_spatial.py) has three layers. From base layer to last layer, training image sizes are HxW, 2Hx2W and 4Hx4W repectively.
 
