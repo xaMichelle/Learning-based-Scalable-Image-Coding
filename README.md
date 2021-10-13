@@ -73,7 +73,8 @@ python train_quality.py
 
 ## Spatial Scalable
 
-```python train_spatial.py
+```
+python train_spatial.py
 --input_image ./your test image folder/test.png
 --input_image_half ./your test image folder/test-half.png
 --input_image_quater ./your test image folder/test-quater.png
@@ -83,3 +84,25 @@ python train_quality.py
 --num_filters_e1 (shoud be same as your training settings)
 --num_filters_e2 (shoud be same as your training settings)
 ```
+
+## Citation
+
+If you find our paper useful, please cite:
+```
+@ARTICLE{9547677,
+  author={Mei, Yixin and Li, Li and Li, Zhu and Li, Fan},
+  journal={IEEE Transactions on Multimedia}, 
+  title={Learning-Based Scalable Image Compression with Latent-Feature Reuse and Prediction}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={1-1},
+  doi={10.1109/TMM.2021.3114548}}
+```
+
+## Contact
+
+If you have any question or find any bug, please feel free to contact:
+
+Yixin Mei @ XJTU
+xamichelle@stu.xjtu.edu.cn
