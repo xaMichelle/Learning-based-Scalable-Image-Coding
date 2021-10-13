@@ -4,7 +4,7 @@ This repo holds the code for paper:
 
 Y. Mei, L. Li, Z. Li and F. Li, "Learning-Based Scalable Image Compression with Latent-Feature Reuse and Prediction," in IEEE Transactions on Multimedia, doi: 10.1109/TMM.2021.3114548.
 
-![Framework].<img src="https://github.com/xaMichelle/Learning-based-Scalable-Image-Coding/blob/master/framework.PNG" width="800" height="500" />
+.<img src="https://github.com/xaMichelle/Learning-based-Scalable-Image-Coding/blob/master/framework.PNG" width="600" height="400" />
 
 # Dependency
 
@@ -50,7 +50,7 @@ For spatial scalable training, please preprocess training dataset first. Our exa
 python create_tfrecords.py --train_tfrecords ./xxx.tfrecords --input_image ./your_4Hx4W_image_folder, --input_image_half ./your_2Hx2W_image_folder, --input_image_quater ./your_4Hx4W_image_folder
 ```
 
-The augemnts for train_spatial.py 
+The arguments for train_spatial.py 
 ```
 --train_tfrecords, training dataset path
 --checkpoint_dir, checkpoint output folder
@@ -64,10 +64,12 @@ The augemnts for train_spatial.py
 
 # Test
 
+In eval_xxx.py files, `evaluate()` will compress the input image into several bitstreams like: stream_B.tfci and stream_e1.tfci, it will also evaluate the bpp and PSNR (or MS-SSIM) of each layer. `decompress()` can decode bitstreams to images.
+
 ## Quality Scalable
 
 ```
-python train_quality.py
+python eval_quality.py
 --input_image ./kodak/kodim01.png
 --output_folder ./output
 --checkpoint_dir ./your_pretrained_models
@@ -80,7 +82,7 @@ python train_quality.py
 ## Spatial Scalable
 
 ```
-python train_spatial.py
+python eval_spatial.py
 --input_image ./your test image folder/test.png
 --input_image_half ./your test image folder/test-half.png
 --input_image_quater ./your test image folder/test-quater.png
