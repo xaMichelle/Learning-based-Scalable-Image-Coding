@@ -17,7 +17,6 @@ Or Tensorflow 2.x with Tensorflowp-compression 2.x)
 
 ## Quality Scalable
 
-Our example has four scalable layers:
 ```python train_quality.py```
 
 Please specify:
@@ -25,7 +24,7 @@ Please specify:
 --train_glob, training dataset path
 --checkpoint_dir, checkpoint output folder
 ```
-You can also change the filter number and lambda of each layer:
+You can also change the filter number and lambda of each layer (our example has four scalable layers):
 ```
 --num_filters_B
 --num_filters_e1
@@ -41,7 +40,7 @@ You can also change the filter number and lambda of each layer:
 
 ```python train_spaital.py```
 
-For spatial scalable training, please preparing training dataset first. Our example (train_spatial.py) has three layers. From base layer to last layer, training image sizes are HxW, 2Hx2W and 4Hx4W repectively.
+For spatial scalable training, please preprocessing training dataset first. Our example has three layers. From base layer to last layer, training image sizes are HxW, 2Hx2W and 4Hx4W repectively. Downsample training images into different scales, then:
 
 ```python create_tfrecords.py --train_tfrecords ./xxx.tfrecords --input_image ./your_4Hx4W_image_folder, --input_image_half ./your_2Hx2W_image_folder, --input_image_quater ./your_4Hx4W_image_folder```
 
@@ -58,3 +57,29 @@ The augemnts for train_spatial.py
 ```
 
 # Test
+
+## Quality Scalable
+
+```
+python train_quality.py
+--input_image ./kodak/kodim01.png
+--output_folder ./output
+--checkpoint_dir ./your_pretrained_models
+--num_filters_B (shoud be same as your training settings)
+--num_filters_e1 (shoud be same as your training settings)
+--num_filters_e2 (shoud be same as your training settings)
+--num_filters_e3 (shoud be same as your training settings)
+```
+
+## Spatial Scalable
+
+```python train_spatial.py
+--input_image ./your test image folder/test.png
+--input_image_half ./your test image folder/test-half.png
+--input_image_quater ./your test image folder/test-quater.png
+--output_folder ./output
+--checkpoint_dir ./your_pretrained_models
+--num_filters_B (shoud be same as your training settings)
+--num_filters_e1 (shoud be same as your training settings)
+--num_filters_e2 (shoud be same as your training settings)
+```
