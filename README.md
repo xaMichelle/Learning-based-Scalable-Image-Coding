@@ -4,7 +4,7 @@ This repo holds the code for paper:
 
 Y. Mei, L. Li, Z. Li and F. Li, "Learning-Based Scalable Image Compression with Latent-Feature Reuse and Prediction," in IEEE Transactions on Multimedia, doi: 10.1109/TMM.2021.3114548.
 
-![Framework](https://github.com/xaMichelle/Learning-based-Scalable-Image-Coding/blob/master/framework.PNG).<img src="https://github.com/xaMichelle/Learning-based-Scalable-Image-Coding/blob/master/framework.PNG" width="500" height="300" />
+![Framework].<img src="https://github.com/xaMichelle/Learning-based-Scalable-Image-Coding/blob/master/framework.PNG" width="800" height="500" />
 
 # Dependency
 
@@ -17,7 +17,9 @@ Or Tensorflow 2.x with Tensorflowp-compression 2.x)
 
 ## Quality Scalable
 
-```python train_quality.py```
+```
+python train_quality.py
+```
 
 Please specify:
 ```
@@ -38,11 +40,15 @@ You can also change the filter number and lambda of each layer (our example has 
 
 ## Spatial Scalable
 
-```python train_spaital.py```
+```
+python train_spaital.py
+```
 
 For spatial scalable training, please preprocess training dataset first. Our example has three layers. From base layer to last layer, training image sizes are HxW, 2Hx2W and 4Hx4W repectively. Downsample training images into different scales, then:
 
-`python create_tfrecords.py --train_tfrecords ./xxx.tfrecords --input_image ./your_4Hx4W_image_folder, --input_image_half ./your_2Hx2W_image_folder, --input_image_quater ./your_4Hx4W_image_folder`
+```
+python create_tfrecords.py --train_tfrecords ./xxx.tfrecords --input_image ./your_4Hx4W_image_folder, --input_image_half ./your_2Hx2W_image_folder, --input_image_quater ./your_4Hx4W_image_folder
+```
 
 The augemnts for train_spatial.py 
 ```
